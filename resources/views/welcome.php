@@ -5,6 +5,7 @@
         
     <h2 class="w3-text-blue">About Me!</h2>
 
+ 
     <p>
         Quisque felis ex, pellentesque vel elementum eu, bibendum vel massa. Donec id feugiat 
         erat. Aliquam commodo rutrum velit, vitae vestibulum purus ullamcorper vestibulum. Orci 
@@ -45,10 +46,6 @@
 
             <div class="w3-container w3-padding">
 
-                <?php if($project->url): ?>
-                    View Project: <a href="<?= $project->url ?>"><?= $project->url ?></a>
-                <?php endif; ?>
-
                 <p>
                     Posted: <?= $project->created_at->format('M j, Y') ?>
                     <br>
@@ -58,10 +55,7 @@
                 <a href="/project/<?= $project->slug ?>" class="w3-button w3-green">View Project Details</a>
 
             </div>
-        
-
         </div>
-
     <?php endforeach; ?>
 
 </section>

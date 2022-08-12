@@ -19,7 +19,7 @@
             <h1 class="w3-text-red">Portfolio Console</h1>
 
             <?php if(Auth::check()): ?>
-                You are logged in as <?= auth()->user()->first ?> <?= auth()->user()->last ?> | 
+                You are logged in as <?= auth()->user()->first ?>  <?= auth()->user()->last ?>| 
                 <a href="/console/logout">Log Out</a> | 
                 <a href="/console/dashboard">Dashboard</a> | 
                 <a href="/">Website Home Page</a>
@@ -37,7 +37,10 @@
                 <li><a href="/console/projects/list">Manage Projects</a></li>
                 <li><a href="/console/types/list">Manage Types</a></li>
                 <li><a href="/console/users/list">Manage Users</a></li>
-                <li><a href="/console/logout">Log Out</a></li>
+                <li><a href="/console/skills/list">Manage Skills</a></li>
+                <li><a href="/console/educations/list">Manage Education</a></li>
+                <li><a href="/console/contentblogs/list">Manage Content Blog</a></li>
+                <li><a href="/console/workexperiences/list">Manage Work Experience</a></li>
             </ul>
 
         </section>

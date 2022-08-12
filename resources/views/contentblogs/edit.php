@@ -32,33 +32,37 @@
 
         <section class="w3-padding">
 
-            <h2>Project Image</h2>
+            <h2>Edit Content Blog</h2>
 
-            <div class="w3-margin-bottom">
-                <?php if($project->image): ?>
-                    <img src="<?= asset('storage/'.$project->image) ?>" width="200">
-                <?php endif; ?>
-            </div>
-
-            <form method="post" action="/console/projects/image/<?= $project->id ?>" novalidate class="w3-margin-bottom" enctype="multipart/form-data">
+            <form method="post" action="/console/contentblogs/edit/<?= $contentblog->id ?>" novalidate class="w3-margin-bottom">
 
                 <?= csrf_field() ?>
 
                 <div class="w3-margin-bottom">
-                    <label for="image">Image:</label>
-                    <input type="file" name="image" id="first" value="<?= old('image') ?>" required>
+                    <label for="title">Title:</label>
+                    <input type="title" name="title" id="title" value="<?= old('title', $contentblog->title) ?>" required>
                     
-                    <?php if($errors->first('image')): ?>
+                    <?php if($errors->first('title')): ?>
                         <br>
-                        <span class="w3-text-red"><?= $errors->first('image'); ?></span>
+                        <span class="w3-text-red"><?= $errors->first('title'); ?></span>
                     <?php endif; ?>
                 </div>
 
-                <button type="submit" class="w3-button w3-green">Add Image</button>
+                <div class="w3-margin-bottom">
+                    <label for="content">Content:</label>
+                    <textarea name="content" id="content" required><?= old('content', $contentblog->content) ?></textarea>
+
+                    <?php if($errors->first('content')): ?>
+                        <br>
+                        <span class="w3-text-red"><?= $errors->first('content'); ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <button type="submit" class="w3-button w3-green">Edit Content Blog</button>
 
             </form>
 
-            <a href="/console/projects/list">Back to Project List</a>
+            <a href="/console/contentblogs/list">Back to Content Blog List</a>
 
         </section>
 
