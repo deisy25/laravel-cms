@@ -45,7 +45,7 @@ Route::get('/skills', function(){
 
 Route::get('/educations', function(){
 
-    $educations = Education::orderBy('instituteName')->get();
+    $educations = Educations::orderBy('instituteName')->get();
     return $educations;
 
 });
