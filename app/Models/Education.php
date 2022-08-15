@@ -13,7 +13,7 @@ class Education extends Model
      *
      * @var array<int, string>
      */
-    protected $table = 'education';
+    protected $table = 'educations';
     protected $fillable = [
         'instituteName',
         'program',
