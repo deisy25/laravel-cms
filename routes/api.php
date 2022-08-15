@@ -43,6 +43,13 @@ Route::get('/skills', function(){
 
 });
 
+Route::get('/educations', function(){
+
+    $educations = Education::orderBy('instituteName')->get();
+    return $educations;
+
+});
+
 Route::get('/contentblogs', function(){
 
     $contentblog = ContentBlog::orderBy('title')->get();
