@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Project;
 use App\Models\Skill;
 use App\Models\ContentBlog;
+use App\Models\Education;
 use App\Models\Workexperience;
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,7 @@ Route::get('/skills', function(){
 
 Route::get('/educations', function(){
 
-    $educations = Educations::orderBy('instituteName')->get();
+    $educations = Education::orderBy('instituteName')->get();
     return $educations;
 
 });
